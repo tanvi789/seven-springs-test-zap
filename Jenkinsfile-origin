@@ -1,4 +1,12 @@
-node {
+def label = "mypod-${UUID.randomUUID().toString()}"
+podTemplate(label: label, containers: [
+    containerTemplate(name: 'zap', image: 'owasp/zap2docker-weekly:latest', ttyEnabled: true, command: 'cat')
+  ],
+  volumes: [
+  emptyDirVolume(mountPath: '/zap/wrk')
+     ]
+){
+node(label) {
 	def projectName = 'seven-springs-test-zap'
 	projectServer = projectName + "-server"
 	projectDir = projectName
@@ -30,7 +38,7 @@ node {
 
     stage("Run Security Test") {
       try {
-        sh './try-zap-tests-origin.sh'
+        sh './try-zap-tests.sh'
       } catch (Exception e) {
         echo 'Problem while building job:[' + e.getMessage() + ']'
       }
@@ -51,4 +59,5 @@ node {
     publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/zap/wrk', reportFiles: 'zap-scan-${BUILD_NUMBER}-release-version-${CBAAS_VERSION}.html', reportName: 'ZapScanReport', reportTitles: ''])
    }
  }
+}
 }
