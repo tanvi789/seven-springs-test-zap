@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1c7883d0-1f01-4275-9b1d-b630bc3d972b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
-    </list>
+    <list default="true" id="1c7883d0-1f01-4275-9b1d-b630bc3d972b" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -180,16 +178,15 @@
       <workItem from="1554917439888" duration="4685000" />
       <workItem from="1555028014663" duration="1620000" />
       <workItem from="1555104627187" duration="69000" />
-      <workItem from="1555123754111" duration="258000" />
+      <workItem from="1555123754111" duration="589000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7387000" />
+    <option name="totallyTimeSpent" value="7718000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1366" height="745" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
