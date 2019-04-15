@@ -6,7 +6,7 @@ podTemplate(label: 'mypod', containers: [
   emptyDirVolume(mountPath: '/zap/wrk')
      ]
 ){
-node(mypod) {
+node('mypod') {
 	def projectName = 'seven-springs-test-zap'
 	projectServer = projectName + "-server"
 	projectDir = projectName
