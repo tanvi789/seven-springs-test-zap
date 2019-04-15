@@ -1,12 +1,12 @@
-def label = "mypod-${UUID.randomUUID().toString()}"
-podTemplate(label: 'mypod', containers: [
+def mypod = "mypod-${UUID.randomUUID().toString()}"
+podTemplate(label: mypod, containers: [
     containerTemplate(name: 'zap', image: 'owasp/zap2docker-weekly:latest', ttyEnabled: true, command: 'cat')
   ],
   volumes: [
   emptyDirVolume(mountPath: '/zap/wrk')
      ]
 ){
-node('mypod') {
+node(mypod) {
 	def projectName = 'seven-springs-test-zap'
 	projectServer = projectName + "-server"
 	projectDir = projectName
