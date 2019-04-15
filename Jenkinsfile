@@ -1,3 +1,4 @@
+def label = "mypod-${UUID.randomUUID().toString()}"
 podTemplate(label: 'mypod', containers: [
     containerTemplate(name: 'zap', image: 'owasp/zap2docker-weekly:latest', ttyEnabled: true, command: 'cat')
   ],
