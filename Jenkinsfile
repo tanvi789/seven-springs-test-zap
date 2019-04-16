@@ -38,7 +38,7 @@ node(mypod) {
 
     stage("Run Security Test") {
       try {
-        sh './try-zap-tests-origin.sh'
+        sh './try-zap-tests.sh'
       } catch (Exception e) {
         echo 'Problem while building job:[' + e.getMessage() + ']'
       }
