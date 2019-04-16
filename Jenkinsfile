@@ -47,17 +47,6 @@ node(mypod) {
 
       echo 'Leaving Stage "Run Security Test"'
     }
-
-   stage("Archive Artefacts"){
-   sh 'ls -la /zap/wrk'
-   sh "cp -p /zap/wrk/* ${WORKSPACE}"
-   archiveArtifacts artifacts: '**/*.html'
-   archiveArtifacts artifacts: '**/*.conf'
-   }
-
-   stage("publishHTML"){
-    publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/zap/wrk', reportFiles: 'zap-scan-${BUILD_NUMBER}-release-version-${CBAAS_VERSION}.html', reportName: 'ZapScanReport', reportTitles: ''])
-   }
  }
 }
 }
